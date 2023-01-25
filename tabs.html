@@ -9,29 +9,44 @@
   <style>
     table._task {
       width: 90vw;
-      background: yellowgreen;
+      background: #397;
       color: #eee;
       margin: 5rem auto;
       border-spacing: .3rem;
+      text-align: left;
     }
     tr._thead {
       background: green;
     }
     tr._tbody td{
-      border: 1px solid #000;
+      border: 1px solid greenyellow;
     }
+    table._task tr:nth-child(even){
+      background: oliveDrab;
+    }
+    /* table._task tr:nth-of-type(odd){
+      background: oliveDrab;
+    } */
     @media screen and (max-width: 480px){
-      table._task, tr._thead, tr._tbody,
+      tr._thead, tr._tbody,
       tr._tbody td{
         display: block;
       }
       tr._thead {
         display: none;
       }
+      tr._tbody {
+        border: 2px solid greenyellow;
+        margin-bottom: 2rem;
+      }
+      tr._tbody td{
+        border: none;
+      }
       tr._tbody td::before {
         display: block;
         content: attr(data-title);
-        background: #111;
+        background: teal;
+        color: yellow;
       }
     }
   </style>
@@ -41,9 +56,9 @@
   <table class="_task">
     <!--Table-Head-Area-->
     <tr class="_thead">
-      <td>Id</td>
-      <td>Task Name</td>
-      <td colspan="4">Alarm Set</td>
+      <th>Id</th>
+      <th>Task Name</th>
+      <th colspan="4">Alarm Set</th>
     </tr>
     <!--//Table-Head-Area-->
     <!--Table-Body-Area-->
@@ -52,9 +67,29 @@
       <td data-title="Task Name">EXample item 1</td>
       <td data-title="Alarm Set">01:00</td>
       <td data-title="Alarm Set">01:55</td>
+      <td data-title="Alarm Set">jam</td>
+      <td data-title="Alarm Set">menit</td>
+    </tr>
+    
+    <tr class="_tbody">
+      <td data-title="Id">02</td>
+      <td data-title="Task Name">EXample item 2</td>
+      <td data-title="Alarm Set">01:00</td>
+      <td data-title="Alarm Set">01:55</td>
     </tr>
     <!--//Table-Body-Area-->
   </table>
   <!--//Table-Area-->
+  <!--Vanila-JavaScript-->
+  <script>
+    const [..._tbody] = document.querySelectorAll('._task tr._tbody');
+    _tbody.forEach(item => {
+      let [id, task, ...alarms] = item.cells;
+      let [alarm1, ...alarm2] = alarms;
+      alarm2.forEach(item => item.attributes.removeNamedItem('data-title'));
+      console.log(alarm2)
+    })
+  </script>
+  <!--//Vanila-JavaScript-->
 </body>
 </html>
