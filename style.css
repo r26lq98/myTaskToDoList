@@ -1,0 +1,75 @@
+c-toggler{
+  Background: var(--instaColorHome); 
+  width: 20px;
+  height: 20px;
+}
+c-console{background: #212429; }
+c-message{background: #212429; color: #777;}
+c-type, #__c-input{
+  color: yellowGreen;
+  font-weight: bold;
+}
+c-key {color: darkseagreen;}
+c-text.__c-string,
+c-key {line-height: 2rem;}
+c-text.__c-string {color: deepskyblue; font-weight: bold;}
+c-text.__c-number {color: gold;}
+c-text.__c-undefined {color: tomato;}
+c-text.__c-boolean {color: lawngreen;}
+#__c-input {font-size: 1.2rem; }
+
+:root {
+  --buble-color: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.3), rgba(240, 245, 255, 0.3) 40%, rgba(225, 238, 255, 0.5) 60%, rgba(43, 130, 255, 0.4));
+  /* WARNA TEKS UI TEMA */
+  --disable-color: gray;
+  --accent-color: #F761A1;
+  --instaColorHome : radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,darkviolet 90%);
+  --navbar-color : linear-gradient( 109deg,  var(--nav-color-top) 11.2%, var(--nav-color-bottom) 90% );
+  --nav-color-top : #fb26d1;
+  --nav-color-bottom : #5c12a6;
+  --text-gradient: radial-gradient( circle farthest-corner at 10% 20%,  var(--text-color-top) 17.8%, var(--text-color-bottom) 100.2% );
+  --text-color-top : #ff5ef7;
+  --text-color-bottom : #02cfff;
+  --navHoverLink : radial-gradient(circle, rgba(197,133,232,.2) 0%, transparent 85%);
+  --navHoverLinkFilter : progid:DXImageTransform.Microsoft.gradient(startColorstr="#e42fef",endColorstr="transparent",GradientType=1);
+  --default-Bg : #efefef;
+  --box-Bg : #ffffff;
+  --code-bg : #23241f;
+  --gradient-ui-color : linear-gradient( 135deg, var(--accent-color) 10%, var(--gradient-bottom-color) 100%);
+  --gradient-bottom-color : #8C1BAB;
+  /*TEXT-COLOR*/
+  --h-colors : #212427;
+  --p-colors : #212429;
+  --link-colors : #212429;
+  --icon-colors : #212429;
+  --navLink : #373737;
+  /* @@@@@@@ BOX-SHADOW-COLOR */
+  --hover-bshadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  --shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --sm-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --md-shadow: rgba(0, 0, 0, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  --shadow-img: rgba(0, 0, 0, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  /* @@@@@@@ DROP-SHADOW-COLOR */
+  --dropShadow: drop-shadow(1px 1px 0px rgba(0,0,0,.2));
+  --dropShadow-img: drop-shadow(0px 3px 3px rgba(0, 0, 0, .3));
+  --dropShadow-icon: drop-shadow(1px 1px 2px rgba(0, 0, 0, .3));
+  --newShadow: 0px 16.1px 3.8px -21px rgba(0, 0, 0, 0.074),
+  0px 27px 9.6px -21px rgba(0, 0, 0, 0.106),
+  0px 35.7px 19.5px -21px rgba(0, 0, 0, 0.134),
+  0px 43.5px 40.2px -21px rgba(0, 0, 0, 0.166),
+  0px 51px 110px -21px rgba(0, 0, 0, 0.24)
+;
+  /* TEXT-SHADOW */
+  --text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  /* ICON-ARROWS */
+  --fonawsm: 'Font Awesome 5 Free';
+  /* GOOGLE-FONTS-INCLUDE */
+  --oswald: "Oswald",Georgia,"Times New Roman",Times,serif;
+  --roboto: 'Roboto Condensed', sans-serif !important;
+  /*Effect-*/
+  --text-shadow-moon : none;
+  --backdrop-moon-blur-7px : none;
+  --backdrop-moon-blur-7px-bg: rgba(0,0,0,.8);
+  --banner-bottom-profile-bg: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.996) 100%); 
+  
+}

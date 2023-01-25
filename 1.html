@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <style>
+    .table {
+      display: table;
+      width: 90vw;
+      margin: 5rem auto;
+      background: black;
+      color: whiteSmoke;
+    }
+    .row {
+      display: table-row;
+    }
+    .row.header {
+      background: #a73;
+    }
+    .cell {
+      display: table-cell;
+    }
+    .table .row:nth-child(even){
+      background: green;
+    }
+    @media screen and (max-width: 480px){
+      .table {
+        display: flex;
+        gap: 5px;
+        flex-flow: column wrap;
+        padding: 5px;
+      }
+      .row, .cell {
+        display: block;
+      }
+      .row {
+        background: darkgreen;
+      }
+      .row.header .cell {
+        display: none;
+      }
+      .row .cell:before {
+        display: block;
+        content: attr(data-title);
+        color: #ff0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="table">
+    
+    <div class="row header">
+      <div class="cell">no</div>
+      <div class="cell">Task Name</div>
+      <div class="cell" colspan="4">Alarm</div>
+    </div>
+    
+    <div class="row">
+      <div class="cell" data-title="no">01</div>
+      <div class="cell" data-title="Task Name">Item ke 1</div>
+      <div class="cell" data-title="Alarm">1 menit</div>
+      <div class="cell" data-title="Alarm">1 menit</div>
+    </div>
+    
+    <div class="row">
+      <div class="cell" data-title="no">02</div>
+      <div class="cell" data-title="Task Name">Item ke 2</div>
+      <div class="cell" data-title="Alarm">5 menit</div>
+    </div>
+    
+  </div>
+</body>
+</html>

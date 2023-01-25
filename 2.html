@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <style>
+    .table {
+      background: yellowGreen;
+      color: white;
+      width: 90vw;
+      border-spacing: 0.3rem;
+        border: black solid 1px;
+        margin: 1rem auto;
+        box-shadow: 0px 16.1px 3.8px -21px rgba(0, 0, 0, 0.074),
+          0px 27px 9.6px -21px rgba(0, 0, 0, 0.106),
+          0px 35.7px 19.5px -21px rgba(0, 0, 0, 0.134),
+          0px 43.5px 40.2px -21px rgba(0, 0, 0, 0.166),
+          0px 51px 110px -21px rgba(0, 0, 0, 0.24);
+          text-transform: capitalize;
+    }
+    tr.head {
+      background: green !important;
+      text-align: left;
+    }
+    tr.body td{
+      border: 1px solid black;
+    }
+    tr:nth-child(even){
+      background: darkgreen;
+    }
+    tr:nth-of-type(odd){
+      background: orange;
+    }
+    @media screen and (max-width: 480px){
+      tr,td,th {
+        display: block;
+      }
+      .head {
+        display: none;
+      }
+      tr td:before{
+        display: block;
+        content: attr(data-title);
+        color: green;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <table class="table">
+    
+    <tr class="head">
+      <th>no</th>
+      <th>Task Name</th>
+      <th colspan="4">alarm</th>
+    </tr>
+    
+    <tr class="body">
+      <td data-title="no">01</td>
+      <td data-title="Task Name">Wake Up</td>
+      <td data-title="alarm">Jam</td>
+      <td data-title="alarm">menit</td>
+      <td data-title="alarm">detik</td>
+      <td data-title="alarm">milidetik</td>
+    </tr>
+  
+    <tr class="body">
+      <td data-title="no">01</td>
+      <td data-title="Task Name">Wake Up</td>
+      <td data-title="alarm">Jam</td>
+      <td data-title="alarm">menit</td>
+      <td data-title="alarm">detik</td>
+      <td data-title="alarm">milidetik</td>
+    </tr>
+    
+    <tr class="body">
+      <td data-title="no">01</td>
+      <td data-title="Task Name">Wake Up</td>
+      <td data-title="alarm">Jam</td>
+      <td data-title="alarm">menit</td>
+      <td data-title="alarm">detik</td>
+      <td data-title="alarm">milidetik</td>
+    </tr>
+    
+    <tr class="body">
+      <td data-title="no">01</td>
+      <td data-title="Task Name">Wake Up</td>
+      <td data-title="alarm">Jam</td>
+      <td data-title="alarm">menit</td>
+      <td data-title="alarm">detik</td>
+      <td data-title="alarm">milidetik</td>
+    </tr>
+  </table>
+</body>
+</html>

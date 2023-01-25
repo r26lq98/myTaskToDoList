@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .table {
+      display: table;
+      width: 90vw;
+      background: green;
+    }
+    .row {
+      display: table-row;
+    }
+    .row.header {
+      background: orange;
+    }
+    .cell {
+      display: table-cell;
+    }
+    @media screen and (max-width: 450px) {
+      .row {
+        display: block;
+      }
+      .row.header {
+        height: 6px;
+      }
+      .cell {
+        display: block;
+      }
+      .row.header .cell {
+        display: none;
+      }
+      .row .cell:before {
+        content: attr(data-title);
+        color: #969696;
+        background: yellow;
+        display: block;
+      }
+}
+  </style>
+</head>
+<body>
+  <div class="table">
+    
+    <div class="row header">
+      <div class="cell">name</div>
+      <div class="cell">no</div>
+      <div class="cell">task</div>
+    </div>
+    
+    <div class="row">
+      <div class="cell" data-title="Name">Gaxionior</div>
+      <div class="cell" data-title="No">01</div>
+      <div class="cell" data-title="Task">Sabit</div>
+    </div>
+    
+    <div class="row">
+      <div class="cell" data-title="Name">Gaxionior</div>
+      <div class="cell" data-title="No">01</div>
+      <div class="cell" data-title="Task">Sabit</div>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
