@@ -76,30 +76,23 @@
   
     <tr class="body">
       <td data-title="no">01</td>
-      <td data-title="Task Name">Wake Up</td>
-      <td data-title="alarm">Jam</td>
-      <td data-title="alarm">menit</td>
-      <td data-title="alarm">detik</td>
-      <td data-title="alarm">milidetik</td>
+      <td data-title="Task Name">Item 02</td>
+      <td data-title="alarm">3 Jam</td>
+      <td data-title="alarm">4 Menit</td>
+      <td data-title="alarm">5 Detik</td>
+      <td data-title="alarm">6 secon</td>
     </tr>
-    
-    <tr class="body">
-      <td data-title="no">01</td>
-      <td data-title="Task Name">Wake Up</td>
-      <td data-title="alarm">Jam</td>
-      <td data-title="alarm">menit</td>
-      <td data-title="alarm">detik</td>
-      <td data-title="alarm">milidetik</td>
-    </tr>
-    
-    <tr class="body">
-      <td data-title="no">01</td>
-      <td data-title="Task Name">Wake Up</td>
-      <td data-title="alarm">Jam</td>
-      <td data-title="alarm">menit</td>
-      <td data-title="alarm">detik</td>
-      <td data-title="alarm">milidetik</td>
-    </tr>
+  
+ 
   </table>
+  <script>
+    const [...tr_body] = document.querySelectorAll('table.table tr.body');
+    tr_body.forEach(item => {
+      let [no, task, ...alarm] = item.cells;
+      let [alrm, ...alarms] = alarm;
+      alarms.forEach( item => item.attributes.removeNamedItem("data-title"));
+      console.log(alarms);
+    });
+  </script>
 </body>
 </html>
