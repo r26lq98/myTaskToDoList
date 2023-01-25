@@ -19,30 +19,18 @@ c-text.__c-boolean {color: lawngreen;}
 #__c-input {font-size: 1.2rem; }
 
 :root {
-  --buble-color: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.3), rgba(240, 245, 255, 0.3) 40%, rgba(225, 238, 255, 0.5) 60%, rgba(43, 130, 255, 0.4));
-  /* WARNA TEKS UI TEMA */
   --disable-color: gray;
-  --accent-color: #F761A1;
   --instaColorHome : radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,darkviolet 90%);
-  --navbar-color : linear-gradient( 109deg,  var(--nav-color-top) 11.2%, var(--nav-color-bottom) 90% );
-  --nav-color-top : #fb26d1;
-  --nav-color-bottom : #5c12a6;
   --text-gradient: radial-gradient( circle farthest-corner at 10% 20%,  var(--text-color-top) 17.8%, var(--text-color-bottom) 100.2% );
   --text-color-top : #ff5ef7;
   --text-color-bottom : #02cfff;
   --navHoverLink : radial-gradient(circle, rgba(197,133,232,.2) 0%, transparent 85%);
   --navHoverLinkFilter : progid:DXImageTransform.Microsoft.gradient(startColorstr="#e42fef",endColorstr="transparent",GradientType=1);
   --default-Bg : #efefef;
-  --box-Bg : #ffffff;
-  --code-bg : #23241f;
-  --gradient-ui-color : linear-gradient( 135deg, var(--accent-color) 10%, var(--gradient-bottom-color) 100%);
-  --gradient-bottom-color : #8C1BAB;
-  /*TEXT-COLOR*/
   --h-colors : #212427;
   --p-colors : #212429;
   --link-colors : #212429;
   --icon-colors : #212429;
-  --navLink : #373737;
   /* @@@@@@@ BOX-SHADOW-COLOR */
   --hover-bshadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   --shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;

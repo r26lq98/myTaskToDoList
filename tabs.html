@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tabs</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="all" />
+  <style>
+    table._task {
+      width: 90vw;
+      background: yellowgreen;
+      color: #eee;
+      margin: 5rem auto;
+      border-spacing: .3rem;
+    }
+    tr._thead {
+      background: green;
+    }
+    tr._tbody td{
+      border: 1px solid #000;
+    }
+    @media screen and (max-width: 480px){
+      table._task, tr._thead, tr._tbody,
+      tr._tbody td{
+        display: block;
+      }
+      tr._thead {
+        display: none;
+      }
+      tr._tbody td::before {
+        display: block;
+        content: attr(data-title);
+        background: #111;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--Table-Area-->
+  <table class="_task">
+    <!--Table-Head-Area-->
+    <tr class="_thead">
+      <td>Id</td>
+      <td>Task Name</td>
+      <td colspan="4">Alarm Set</td>
+    </tr>
+    <!--//Table-Head-Area-->
+    <!--Table-Body-Area-->
+    <tr class="_tbody">
+      <td data-title="Id">01</td>
+      <td data-title="Task Name">EXample item 1</td>
+      <td data-title="Alarm Set">01:00</td>
+      <td data-title="Alarm Set">01:55</td>
+    </tr>
+    <!--//Table-Body-Area-->
+  </table>
+  <!--//Table-Area-->
+</body>
+</html>
