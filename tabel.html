@@ -13,7 +13,8 @@
     margin: 0;
     padding: 5rem 0;
     border-spacing: 1rem;
-    background-color: transparent;
+    background-color: #eee;
+    /* background-image: var(--instaColorHome); */
   }
   tr._thead, 
   #edit:before,
@@ -35,13 +36,28 @@
     grid-auto-columns: 1fr;
     gap: 1rem ;
     line-height: 1.7rem;
+    z-index: 10;
+    filter: var(--dropShadow-icon);
+  }
+  tr._tbody::before {
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    filter: blur(70px);
+    z-index: -1;
   }
   #icon {
     grid-area: icon;
-    background: teal;
+    /* background: teal; */
     position: relative;
   }
   
+  #edit,
   #icon,
   #icon i {
     display: flex;
@@ -59,44 +75,54 @@
   }
   #edit {
     grid-area: edit;
-    background: yellowGreen;
+    /* background: yellowGreen; */
+    color: white;
+    width: 100%;
+    font-size: 2rem;
+    justify-content: flex-end;
   }
   tr._tbody td{
     border: none;
-    align-self: flex-start;
-    /* background: orangered; */
     border-radius: 7pt;
   }
   tr._tbody td::before {
     display: block;
     content: attr(data-title);
-    color: yellow;
+    color: yellowGreen;
   }
   #number::before{
     display: inline-block;
     margin: 0;
     margin-right: .5rem;
   }
+  #number, #number::before {
+    color: gray;
+    font-weight: bold;
+    
+  }
   #number {
-    background: orangered;
     grid-area: number;
   }
   #taskName {
-    background: orangered;
+    /* background: orangered; */
     grid-area: taskName;
     place-self: center;
     margin: 1rem 0;
-  }
-  #icon,
-  #edit
-   {
-    align-self: center;
-    justify-self: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
   }
   #alarm-set {
     /* background: olivedrab; */
     height: 100%;
     text-align: center;
+  }
+  table._task tr:nth-child(even){
+    background: rgba(41,181,146,0.5);
+    background-image: var(--instaColorHome);
+  }
+  table._task tr._tbody:nth-of-type(odd){
+    background: hsla(77.4,86.7%,47.1%,0.646);
   }
 }
   </style>
@@ -115,7 +141,7 @@
     <!--//Table-Head-Area-->
     <!--Table-Body-Area-->
     <tr class="_tbody">
-      <td id="edit" data-title="edit"><i class="fas fa-edit"></i></td>
+      <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
       <td id="number" data-title="Id">01</td>
       <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
       <td id="taskName" data-title="Task Name">EXample item 1</td>
@@ -128,37 +154,25 @@
       <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
       <td id="alarm-set" data-title="Alarm Set">menit</td>
       <td id="alarm-set" data-title="Alarm Set">menit</td>
-      <td id="alarm-set" data-title="Alarm Set">menit</td>
+      <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
     </tr>
 
     <tr class="_tbody">
-      <td id="edit" data-title="edit"><i class="fas fa-edit"></i></td>
+      <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
       <td id="number" data-title="Id">01</td>
       <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
       <td id="taskName" data-title="Task Name">EXample item 1</td>
-      <td data-title="Alarm Set">01:00</td>
-      <td data-title="Alarm Set">01:55</td>
-      <td data-title="Alarm Set">jam</td>
-      <td data-title="Alarm Set">menit</td>
-      <td data-title="Alarm Set">menit</td>
-      <td data-title="Alarm Set">menit</td>
-      <td data-title="Alarm Set">menit</td>
-      <td data-title="Alarm Set">menit</td>
-      <td data-title="Alarm Set">menit</td>
-      <td data-title="Alarm Set">menit</td>
+      <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
+      <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
     </tr>
+
     
   <!--//Table-Area-->
+  </table>
   <!--Vanila-JavaScript-->
-  <!-- <script>
-    const [..._tbody] = document.querySelectorAll('._task tr._tbody');
-    _tbody.forEach(item => {
-      let [id, icon, task, ...alarms] = item.cells;
-      let [alarm1, ...alarm2] = alarms;
-      alarm2.forEach(item => item.attributes.removeNamedItem('data-title'));
-    });
+  <script>
     
-  </script> -->
+  </script>
   <!--//Vanila-JavaScript-->
 </body>
 </html>
