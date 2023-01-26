@@ -11,6 +11,9 @@ table._task {
 tr._thead {
   background: green;
 }
+tr._tbody {
+  position: relative;
+}
 tr._tbody td{
   border: 1px solid greenyellow;
 }
@@ -20,34 +23,4 @@ table._task tr:nth-child(even){
 table._task tr._tbody:nth-of-type(odd){
 background: oliveDrab;
 }
-@media screen and (max-width: 480px){
-  table._task {
-    width: 100vw;
-    margin: 0;
-    border-spacing: 1rem;
-    background-color: transparent;
-  }
-  tr._thead, tr._tbody,
-  tr._tbody td{
-    display: block;
-  }
-  tr._thead {
-    display: none;
-  }
-  tr._tbody {
-    margin-bottom: 2rem;
-    color: black;
-    padding: 1rem;
-    border-radius: 15pt;
-  }
-  tr._tbody td{
-    border: none;
-  }
-  tr._tbody td::before {
-    display: block;
-    content: attr(data-title);
-    background: teal;
-    color: yellow;
-    margin: .7rem 0;
-  }
-}
+
