@@ -16,8 +16,9 @@
     background-color: transparent;
   }
   tr._thead, 
-  tr._tbody td:nth-child(2):before,
-  tr._tbody td:nth-child(3):before {
+  #edit:before,
+  #icon:before,
+  #taskName:before {
     display: none;
   }
   tr._tbody {
@@ -25,13 +26,38 @@
     color: black;
     padding: 1rem;
     border-radius: 15pt;
-    flex-flow: column wrap;
+    display: grid;
+    grid-template-areas: 
+    "number icon edit"
+    "taskName taskName taskName"
+    ;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: 1fr;
+    gap: 1rem ;
   }
-  tr._tbody,
-  tr._tbody td:nth-child(2) {
+  #icon {
+    grid-area: icon;
+    background: teal;
+    position: relative;
+  }
+  
+  /*tr._tbody td:nth-child(2),*/
+  #icon i {
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center; 
+  }
+  #icon i {
+    width: 100px;
+    height: 100px;
+    background: #ac7;
+    border-radius: 50pt;
+    position: absolute;
+    top: -70pt;
+    font-size: 3rem;
+  }
+  #edit {
+    grid-area: edit;
   }
   tr._tbody td{
     border: none;
@@ -46,26 +72,22 @@
     margin: 1rem 0;
     color: yellow;
   }
-  tr._tbody td:first-child::before{
+  #number::before{
     display: inline-block;
     margin: 0;
     margin-right: .5rem;
   }
-  tr._tbody td:nth-child(1) {
+  #number {
     background: orangered;
+    grid-area: number;
   }
-  tr._tbody td:nth-child(2) {
-    width: 100px;
-    height: 100px;
-    top: -40pt;
-    margin: auto;
-    position: absolute;
-    background: #e74;
-    font-size: 3rem;
-    border-radius: 50pt;
+  #taskName {
+    background: orangered;
+    grid-area: taskName;
+    place-self: center;
   }
-  tr._tbody td:nth-child(2),
-  tr._tbody td:nth-child(3)
+  #icon,
+  #edit
    {
     align-self: center;
   }
@@ -77,6 +99,7 @@
   <table class="_task">
     <!--Table-Head-Area-->
     <tr class="_thead">
+      <th>edit</th>
       <th>Id</th>
       <th>icon</th>
       <th>Task Name</th>
@@ -85,9 +108,27 @@
     <!--//Table-Head-Area-->
     <!--Table-Body-Area-->
     <tr class="_tbody">
-      <td data-title="Id">01</td>
-      <td data-title="Icon"><i class="fas fa-home"></i></td>
-      <td data-title="Task Name">EXample item 1</td>
+      <td id="edit" data-title="edit"><i class="fas fa-edit"></i></td>
+      <td id="number" data-title="Id">01</td>
+      <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
+      <td id="taskName" data-title="Task Name">EXample item 1</td>
+      <td data-title="Alarm Set">01:00</td>
+      <td data-title="Alarm Set">01:55</td>
+      <td data-title="Alarm Set">jam</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+    </tr>
+
+    <tr class="_tbody">
+      <td id="edit" data-title="edit"><i class="fas fa-edit"></i></td>
+      <td id="number" data-title="Id">01</td>
+      <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
+      <td id="taskName" data-title="Task Name">EXample item 1</td>
       <td data-title="Alarm Set">01:00</td>
       <td data-title="Alarm Set">01:55</td>
       <td data-title="Alarm Set">jam</td>
@@ -100,18 +141,9 @@
       <td data-title="Alarm Set">menit</td>
     </tr>
     
-    <tr class="_tbody">
-      <td data-title="Id">02</td>
-      <td data-title="Icon"><i class="fas fa-home"></i></td>
-      <td data-title="Task Name">EXample item 2</td>
-      <td data-title="Alarm Set">01:00</td>
-      <td data-title="Alarm Set">01:55</td>
-    </tr>
-    <!--//Table-Body-Area-->
-  </table>
   <!--//Table-Area-->
   <!--Vanila-JavaScript-->
-  <script>
+  <!-- <script>
     const [..._tbody] = document.querySelectorAll('._task tr._tbody');
     _tbody.forEach(item => {
       let [id, icon, task, ...alarms] = item.cells;
@@ -119,7 +151,7 @@
       alarm2.forEach(item => item.attributes.removeNamedItem('data-title'));
     });
     
-  </script>
+  </script> -->
   <!--//Vanila-JavaScript-->
 </body>
 </html>
