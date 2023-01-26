@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tabs</title>
-  <link rel="stylesheet" href="/stylesheets/_min.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="/stylesheets/table_task.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="stylesheets/_min.css" type="text/css" media="all" />
   <style>
   @media screen and (max-width: 480px){
   table._task {
@@ -17,11 +16,9 @@
     background-color: transparent;
   }
   tr._thead, 
-  tr._tbody td:nth-child(2):before {
+  tr._tbody td:nth-child(2):before,
+  tr._tbody td:nth-child(3):before {
     display: none;
-  }
-  tr._tbody td{
-    display: block;
   }
   tr._tbody {
     margin-bottom: 5rem;
@@ -39,6 +36,23 @@
   tr._tbody td{
     border: none;
     align-self: flex-start;
+    /* background: orangered; */
+    border-radius: 7pt;
+    margin: .5rem 0;
+  }
+  tr._tbody td::before {
+    display: block;
+    content: attr(data-title);
+    margin: 1rem 0;
+    color: yellow;
+  }
+  tr._tbody td:first-child::before{
+    display: inline-block;
+    margin: 0;
+    margin-right: .5rem;
+  }
+  tr._tbody td:nth-child(1) {
+    background: orangered;
   }
   tr._tbody td:nth-child(2) {
     width: 100px;
@@ -46,21 +60,14 @@
     top: -40pt;
     margin: auto;
     position: absolute;
-    align-self: center;
     background: #e74;
     font-size: 3rem;
     border-radius: 50pt;
   }
-  tr._tbody td::before {
-    display: block;
-    content: attr(data-title);
-    /* background: teal; */
-    color: yellow;
-    margin: .7rem 0;
-  }
-  tr._tbody td:first-child::before{
-    display: inline-block;
-    margin-right: 1rem;
+  tr._tbody td:nth-child(2),
+  tr._tbody td:nth-child(3)
+   {
+    align-self: center;
   }
 }
   </style>
@@ -107,7 +114,7 @@
   <script>
     const [..._tbody] = document.querySelectorAll('._task tr._tbody');
     _tbody.forEach(item => {
-      let [id, task, icon, ...alarms] = item.cells;
+      let [id, icon, task, ...alarms] = item.cells;
       let [alarm1, ...alarm2] = alarms;
       alarm2.forEach(item => item.attributes.removeNamedItem('data-title'));
     });
