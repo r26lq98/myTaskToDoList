@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tabs</title>
+  <link rel="stylesheet" href="stylesheets/_min.css" type="text/css" media="all" />
+  <style>
+  @media screen and (max-width: 480px){
+  table._task {
+    width: 100vw;
+    margin: 0;
+    padding: 5rem 0;
+    border-spacing: 1rem;
+    background-color: transparent;
+  }
+  tr._thead, 
+  tr._tbody td:nth-child(2):before,
+  tr._tbody td:nth-child(3):before {
+    display: none;
+  }
+  tr._tbody {
+    margin-bottom: 5rem;
+    color: black;
+    padding: 1rem;
+    border-radius: 15pt;
+    flex-flow: column wrap;
+  }
+  tr._tbody,
+  tr._tbody td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+  tr._tbody td{
+    border: none;
+    align-self: flex-start;
+    /* background: orangered; */
+    border-radius: 7pt;
+    margin: .5rem 0;
+  }
+  tr._tbody td::before {
+    display: block;
+    content: attr(data-title);
+    margin: 1rem 0;
+    color: yellow;
+  }
+  tr._tbody td:first-child::before{
+    display: inline-block;
+    margin: 0;
+    margin-right: .5rem;
+  }
+  tr._tbody td:nth-child(1) {
+    background: orangered;
+  }
+  tr._tbody td:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    top: -40pt;
+    margin: auto;
+    position: absolute;
+    background: #e74;
+    font-size: 3rem;
+    border-radius: 50pt;
+  }
+  tr._tbody td:nth-child(2),
+  tr._tbody td:nth-child(3)
+   {
+    align-self: center;
+  }
+}
+  </style>
+</head>
+<body>
+  <!--Table-Area-->
+  <table class="_task">
+    <!--Table-Head-Area-->
+    <tr class="_thead">
+      <th>Id</th>
+      <th>icon</th>
+      <th>Task Name</th>
+      <th colspan="10" align="center">Alarm Set</th>
+    </tr>
+    <!--//Table-Head-Area-->
+    <!--Table-Body-Area-->
+    <tr class="_tbody">
+      <td data-title="Id">01</td>
+      <td data-title="Icon"><i class="fas fa-home"></i></td>
+      <td data-title="Task Name">EXample item 1</td>
+      <td data-title="Alarm Set">01:00</td>
+      <td data-title="Alarm Set">01:55</td>
+      <td data-title="Alarm Set">jam</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+      <td data-title="Alarm Set">menit</td>
+    </tr>
+    
+    <tr class="_tbody">
+      <td data-title="Id">02</td>
+      <td data-title="Icon"><i class="fas fa-home"></i></td>
+      <td data-title="Task Name">EXample item 2</td>
+      <td data-title="Alarm Set">01:00</td>
+      <td data-title="Alarm Set">01:55</td>
+    </tr>
+    <!--//Table-Body-Area-->
+  </table>
+  <!--//Table-Area-->
+  <!--Vanila-JavaScript-->
+  <script>
+    const [..._tbody] = document.querySelectorAll('._task tr._tbody');
+    _tbody.forEach(item => {
+      let [id, icon, task, ...alarms] = item.cells;
+      let [alarm1, ...alarm2] = alarms;
+      alarm2.forEach(item => item.attributes.removeNamedItem('data-title'));
+    });
+    
+  </script>
+  <!--//Vanila-JavaScript-->
+</body>
+</html>
