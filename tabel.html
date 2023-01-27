@@ -7,124 +7,125 @@
   <title>Tabs</title>
   <link rel="stylesheet" href="stylesheets/_min.css" type="text/css" media="all" />
   <style>
-  @media screen and (max-width: 480px){
-  table._task {
-    width: 100vw;
-    margin: 0;
-    padding: 5rem 0;
-    border-spacing: 1rem;
-    background-color: #212121;
-    /* background-image: var(--instaColorHome); */
-  }
-  tr._thead, 
-  #edit:before,
-  #icon:before,
-  #taskName:before {
-    display: none;
-  }
-  tr._tbody {
-    margin-bottom: 5rem;
-    color: black;
-    padding: 1rem;
-    border-radius: 15pt;
-    display: grid;
-    grid-template-areas: 
-    "number icon edit"
-    "taskName taskName taskName"
-    ;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-columns: 1fr;
-    gap: 1rem ;
-    line-height: 1.7rem;
-    z-index: 10;
-    filter: var(--dropShadow-icon);
-  }
-  tr._tbody::before {
-    width: 100%;
-    height: 100%;
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: var(--instaColorHome);
-    filter: blur(70px);
-    z-index: -1;
-  }
-  #icon {
-    grid-area: icon;
-    /* background: teal; */
-    position: relative;
-  }
-  
-  #edit,
-  #icon,
-  #icon i {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-  }
-  #icon i {
-    width: 100px;
-    height: 100px;
-    background: #ac7;
-    border-radius: 50pt;
-    position: absolute;
-    top: -55pt;
-    font-size: 3rem;
-  }
-  #edit {
-    grid-area: edit;
-    /* background: yellowGreen; */
-    color: white;
-    width: 100%;
-    font-size: 2rem;
-    justify-content: flex-end;
-  }
-  tr._tbody td{
-    border: none;
-    border-radius: 7pt;
-  }
-  tr._tbody td::before {
-    display: block;
-    content: attr(data-title);
-    color: yellowGreen;
-  }
-  #number::before{
-    display: inline-block;
-    margin: 0;
-    margin-right: .5rem;
-  }
-  #number, #number::before {
-    color: gray;
-    font-weight: bold;
+  @media screen and (max-width: 540px){
+    table._task {
+      width: 100vw;
+      margin: 0;
+      padding: 5rem 0;
+      border-spacing: 1rem;
+      background-color: #212121;
+      /* background-image: var(--instaColorHome); */
+    }
+    tr._thead, 
+    #edit::before,
+    #icon::before,
+    td#number::before,
+    #taskName::before {
+      display: none;
+    }
+    tr._tbody {
+      margin-bottom: 5rem;
+      font-weight: bold;
+      color: white;
+      padding: 1rem;
+      border-radius: 15pt;
+      display: grid;
+      grid-template-areas: 
+      "number icon edit"
+      "taskName taskName taskName"
+      ;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-columns: 1fr;
+      gap: 1rem ;
+      line-height: 1.7rem;
+      z-index: 10;
+      filter: var(--dropShadow-icon);
+    }
+    tr._tbody::before {
+      width: 100%;
+      height: 100%;
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: var(--instaColorHome);
+      filter: blur(70px);
+      z-index: -1;
+    }
+    table._task tr:nth-child(even){
+      background: rgba(41,181,146,0.5);
+      background-image: var(--instaColorHome);
+    }
+    table._task tr._tbody:nth-of-type(odd){
+      background: rgba(195,44,234,0.5);
+    }
+    tr._tbody td{
+      border: none;
+      border-radius: 7pt;
+    }
+    tr._tbody td::before {
+      display: block;
+      content: attr(data-title);
+      color: yellowGreen;
+      font-weight: bold;
+    }
+    #icon {
+      grid-area: icon;
+      /* background: teal; */
+      position: relative;
+    }
     
+    #edit,
+    #icon,
+    #icon i {
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+    }
+    #icon i {
+      width: 100px;
+      height: 100px;
+      background: #ac7;
+      border-radius: 50pt;
+      /* border: 3px solid white; */
+      position: absolute;
+      top: -55pt;
+      font-size: 3rem;
+    }
+    #edit {
+      grid-area: edit;
+      /* background: yellowGreen; */
+      color: white;
+      width: 100%;
+      font-size: 2rem;
+      justify-content: flex-end;
+    }
+    #number::before{
+      display: inline-block;
+      margin: 0;
+      margin-right: .5rem;
+    }
+    #number, #number::before {
+      color: gray;
+    }
+    #number {
+      grid-area: number;
+    }
+    #taskName {
+      /* background: orangered; */
+      grid-area: taskName;
+      place-self: center;
+      margin: 1rem 0;
+      font-size: 2rem;
+    }
+    #alarm-set {
+      /* background: olivedrab; */
+      height: 100%;
+      text-align: center;
+      font-weight: lighter;
+    }
   }
-  #number {
-    grid-area: number;
-  }
-  #taskName {
-    /* background: orangered; */
-    grid-area: taskName;
-    place-self: center;
-    margin: 1rem 0;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  #alarm-set {
-    /* background: olivedrab; */
-    height: 100%;
-    text-align: center;
-  }
-  table._task tr:nth-child(even){
-    background: rgba(41,181,146,0.5);
-    background-image: var(--instaColorHome);
-  }
-  table._task tr._tbody:nth-of-type(odd){
-    background: rgba(39,212,255,0.3);
-  }
-}
   </style>
 </head>
 <body>
