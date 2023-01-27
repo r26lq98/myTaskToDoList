@@ -26,9 +26,9 @@ tr._thead th {
 table._task tr:nth-child(even){
   background: #175;
 }
-table._task tr._tbody:nth-of-type(odd){
+/* table._task tr._tbody:nth-of-type(odd){
   background: oliveDrab;
-}
+} */
 
 @media screen and (max-width: 540px){
   .table_task {
@@ -48,7 +48,7 @@ table._task tr._tbody:nth-of-type(odd){
   #edit::before,
   #icon::before,
   td#number::before,
-  #taskName::before {
+  #taskName::before{
     display: none;
   }
   tr._tbody {

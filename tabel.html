@@ -26,38 +26,45 @@
       <!--//Table-Head-Area-->
       <!--Table-Body-Area-->
       <tr class="_tbody">
-        <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
-        <td id="number" data-title="Id">01</td>
-        <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
-        <td id="taskName" data-title="Task Name">EXample item 1</td>
-        <td id="alarm-set" data-title="Alarm Set">01:00</td>
-        <td id="alarm-set" data-title="Alarm Set">01:55</td>
-        <td id="alarm-set" data-title="Alarm Set">jam</td>
-        <td id="alarm-set" data-title="Alarm Set">1 menit sebelum mulai</td>
-        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-        <td id="alarm-set" data-title="Alarm Set">menit</td>
-        <td id="alarm-set" data-title="Alarm Set">menit</td>
-        <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
+        <td><i class="fas fa-ellipsis-h"></i></td> <td>01</td>
+        <td><i class="fas fa-home"></i></td>
+        <td>EXample item 1</td>
+        <td>01:00</td>
+        <td>01:55</td>
+        <td>jam</td>
+        <td>1 menit sebelum mulai</td>
+        <td>5 menit sebelum mulai</td>
+        <td>5 menit sebelum mulai</td>
+        <td>5 menit sebelum mulai</td>
+        <td>menit</td>
+        <td>menit</td>
+        <td>2 menit sebelum mulai</td>
       </tr>
   
-      <tr class="_tbody">
-        <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
-        <td id="number" data-title="Id">01</td>
-        <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
-        <td id="taskName" data-title="Task Name">EXample item 1</td>
-        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-        <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
-      </tr>
-  
-      
     <!--//Table-Area-->
     </table>
   </div>
   <!--Vanila-JavaScript-->
   <script>
-    
+  // Tabel_Task_Root
+  const _task = document.querySelector('table._task'),
+  [..._tbody] = _task.querySelectorAll('._tbody');
+  _tbody.forEach(item => {
+    let [edit, number, icon, taskName, ...alarmSet] = item.cells;
+    edit.id = "edit";
+    number.id = "number";
+    icon.id = "icon";
+    taskName.id = "taskName";
+    edit.setAttribute("data-title", "Edit");
+    number.setAttribute("data-title", "Id");
+    icon.setAttribute("data-title", "icon");
+    taskName.setAttribute("data-title", "Task Name");
+    alarmSet.map(data => {
+      data.id = "alarm-set";
+      data.setAttribute("data-title", "Alarm Set")
+    });
+  });
+  
   </script>
   <!--//Vanila-JavaScript-->
 </body>
