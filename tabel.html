@@ -7,169 +7,54 @@
   <title>Tabs</title>
   <link rel="stylesheet" href="stylesheets/_min.css" type="text/css" media="all" />
   <style>
-  @media screen and (max-width: 540px){
-    table._task {
-      width: 100vw;
-      margin: 0;
-      padding: 5rem 0;
-      border-spacing: 1rem;
-      background-color: #212121;
-      /* background-image: var(--instaColorHome); */
-    }
-    tr._thead, 
-    #edit::before,
-    #icon::before,
-    td#number::before,
-    #taskName::before {
-      display: none;
-    }
-    tr._tbody {
-      margin-bottom: 5rem;
-      font-weight: bold;
-      color: white;
-      padding: 1rem;
-      border-radius: 15pt;
-      display: grid;
-      grid-template-areas: 
-      "number icon edit"
-      "taskName taskName taskName"
-      ;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-columns: 1fr;
-      gap: 1rem ;
-      line-height: 1.7rem;
-      z-index: 10;
-      filter: var(--dropShadow-icon);
-    }
-    tr._tbody::before {
-      width: 100%;
-      height: 100%;
-      display: block;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-image: var(--instaColorHome);
-      filter: blur(70px);
-      z-index: -1;
-    }
-    table._task tr:nth-child(even){
-      background: rgba(41,181,146,0.5);
-      background-image: var(--instaColorHome);
-    }
-    table._task tr._tbody:nth-of-type(odd){
-      background: rgba(195,44,234,0.5);
-    }
-    tr._tbody td{
-      border: none;
-      border-radius: 7pt;
-    }
-    tr._tbody td::before {
-      display: block;
-      content: attr(data-title);
-      color: yellowGreen;
-      font-weight: bold;
-    }
-    #icon {
-      grid-area: icon;
-      /* background: teal; */
-      position: relative;
-    }
     
-    #edit,
-    #icon,
-    #icon i {
-      display: flex;
-      align-items: center;
-      justify-content: center; 
-    }
-    #icon i {
-      width: 100px;
-      height: 100px;
-      background: #ac7;
-      border-radius: 50pt;
-      /* border: 3px solid white; */
-      position: absolute;
-      top: -55pt;
-      font-size: 3rem;
-    }
-    #edit {
-      grid-area: edit;
-      /* background: yellowGreen; */
-      color: white;
-      width: 100%;
-      font-size: 2rem;
-      justify-content: flex-end;
-    }
-    #number::before{
-      display: inline-block;
-      margin: 0;
-      margin-right: .5rem;
-    }
-    #number, #number::before {
-      color: gray;
-    }
-    #number {
-      grid-area: number;
-    }
-    #taskName {
-      /* background: orangered; */
-      grid-area: taskName;
-      place-self: center;
-      margin: 1rem 0;
-      font-size: 2rem;
-    }
-    #alarm-set {
-      /* background: olivedrab; */
-      height: 100%;
-      text-align: center;
-      font-weight: lighter;
-    }
-  }
   </style>
 </head>
 <body>
   <!--Table-Area-->
-  <table class="_task">
-    <!--Table-Head-Area-->
-    <tr class="_thead">
-      <th>edit</th>
-      <th>Id</th>
-      <th>icon</th>
-      <th>Task Name</th>
-      <th colspan="10" align="center">Alarm Set</th>
-    </tr>
-    <!--//Table-Head-Area-->
-    <!--Table-Body-Area-->
-    <tr class="_tbody">
-      <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
-      <td id="number" data-title="Id">01</td>
-      <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
-      <td id="taskName" data-title="Task Name">EXample item 1</td>
-      <td id="alarm-set" data-title="Alarm Set">01:00</td>
-      <td id="alarm-set" data-title="Alarm Set">01:55</td>
-      <td id="alarm-set" data-title="Alarm Set">jam</td>
-      <td id="alarm-set" data-title="Alarm Set">1 menit sebelum mulai</td>
-      <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-      <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-      <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-      <td id="alarm-set" data-title="Alarm Set">menit</td>
-      <td id="alarm-set" data-title="Alarm Set">menit</td>
-      <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
-    </tr>
-
-    <tr class="_tbody">
-      <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
-      <td id="number" data-title="Id">01</td>
-      <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
-      <td id="taskName" data-title="Task Name">EXample item 1</td>
-      <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
-      <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
-    </tr>
-
-    
-  <!--//Table-Area-->
-  </table>
+    <div class="table_task">
+      
+    <table class="_task">
+      <!--Table-Head-Area-->
+      <tr class="_thead">
+        <th>edit</th>
+        <th>Id</th>
+        <th>icon</th>
+        <th>Task Name</th>
+        <th colspan="10">Alarm Set</th>
+      </tr>
+      <!--//Table-Head-Area-->
+      <!--Table-Body-Area-->
+      <tr class="_tbody">
+        <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
+        <td id="number" data-title="Id">01</td>
+        <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
+        <td id="taskName" data-title="Task Name">EXample item 1</td>
+        <td id="alarm-set" data-title="Alarm Set">01:00</td>
+        <td id="alarm-set" data-title="Alarm Set">01:55</td>
+        <td id="alarm-set" data-title="Alarm Set">jam</td>
+        <td id="alarm-set" data-title="Alarm Set">1 menit sebelum mulai</td>
+        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
+        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
+        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
+        <td id="alarm-set" data-title="Alarm Set">menit</td>
+        <td id="alarm-set" data-title="Alarm Set">menit</td>
+        <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
+      </tr>
+  
+      <tr class="_tbody">
+        <td id="edit" data-title="edit"><i class="fas fa-ellipsis-h"></i></td>
+        <td id="number" data-title="Id">01</td>
+        <td id="icon" data-title="Icon"><i class="fas fa-home"></i></td>
+        <td id="taskName" data-title="Task Name">EXample item 1</td>
+        <td id="alarm-set" data-title="Alarm Set">5 menit sebelum mulai</td>
+        <td id="alarm-set" data-title="Alarm Set">2 menit sebelum mulai</td>
+      </tr>
+  
+      
+    <!--//Table-Area-->
+    </table>
+  </div>
   <!--Vanila-JavaScript-->
   <script>
     
