@@ -11,10 +11,12 @@ const _task = document.querySelector('table._task'),
   <li><a href="">Hapus</a></li>
   </ul>`;
   let  [_edit, _number, _icon, _taskName, _alarmSet] = thead.children;
-_tbody.forEach(item => {
+_tbody.forEach((item, i) => {
     let edits = item.insertCell(0),
+    numbers = item.insertCell(1),
     [edit, number, icon, taskName, ...alarmSet] = item.cells;
     edits.innerHTML = `<a href="#tmenu_edit" class="_tmenu_edit"><i class="fas fa-ellipsis-h"></i></a>`;
+    numbers.textContent = (i+1).toString().padStart(2, '0');
     //Cells add id
     edit.id = "edit";
     number.id = "number";
