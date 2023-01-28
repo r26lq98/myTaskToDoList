@@ -1,20 +1,23 @@
 .table_task {
-  background: #000;
   width: 90vw;
   margin: 5rem auto;
   overflow: scroll;
+  position: relative;
 }
 table._task {
   background: #397;
   color: #eee;
   border-collapse: /* separate */ collapse;
-  /* border-spacing: .3rem; */
+  position: relative;
 }
 tr._thead {
   background: green;
 }
-tr._tbody {
+/* tr._tbody {
   position: relative;
+} */
+#edit a._tmenu_edit i {
+  color: #eee;
 }
 tr._tbody td{
   /* border: 1px solid greenyellow; */
@@ -121,7 +124,7 @@ table._task tr:nth-child(even){
     top: -55pt;
     font-size: 3rem;
   }
-  #edit {
+  #edit a i {
     grid-area: edit;
     /* background: yellowGreen; */
     color: white;

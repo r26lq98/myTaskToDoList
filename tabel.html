@@ -7,7 +7,22 @@
   <title>Tabs</title>
   <link rel="stylesheet" href="stylesheets/_min.css" type="text/css" media="all" />
   <style>
-    
+    #edit .tmenu_edit {
+      background: rgba(0,0,0,.5);
+      width: 100%;
+      height: 100%;
+      display: none;
+      padding: 1rem;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+    }
+    #edit .tmenu_edit ul#tmenu_edit {
+      background: #ea3;
+      width: 100%;
+      width: fit-content;
+    }
   </style>
 </head>
 <body>
@@ -26,7 +41,17 @@
       <!--//Table-Head-Area-->
       <!--Table-Body-Area-->
       <tr class="_tbody">
-        <td><i class="fas fa-ellipsis-h"></i></td> <td>01</td>
+        <td>
+          <a href="#tmenu_edit" class="_tmenu_edit"><i class="fas fa-ellipsis-h"></i></a>
+          <div class="tmenu_edit">
+            <ul id="tmenu_edit">
+              <li>item1</li>
+              <li>item2</li>
+              <li>item3</li>
+            </ul>
+          </div>
+        </td>
+        <td>01</td>
         <td><i class="fas fa-home"></i></td>
         <td>EXample item 1</td>
         <td>01:00</td>
@@ -45,27 +70,7 @@
     </table>
   </div>
   <!--Vanila-JavaScript-->
-  <script>
-  // Tabel_Task_Root
-  const _task = document.querySelector('table._task'),
-  [..._tbody] = _task.querySelectorAll('._tbody');
-  _tbody.forEach(item => {
-    let [edit, number, icon, taskName, ...alarmSet] = item.cells;
-    edit.id = "edit";
-    number.id = "number";
-    icon.id = "icon";
-    taskName.id = "taskName";
-    edit.setAttribute("data-title", "Edit");
-    number.setAttribute("data-title", "Id");
-    icon.setAttribute("data-title", "icon");
-    taskName.setAttribute("data-title", "Task Name");
-    alarmSet.map(data => {
-      data.id = "alarm-set";
-      data.setAttribute("data-title", "Alarm Set")
-    });
-  });
-  
-  </script>
+  <script src="js/tabel.js"></script>
   <!--//Vanila-JavaScript-->
 </body>
 </html>
