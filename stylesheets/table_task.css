@@ -159,6 +159,7 @@ table._task tr:nth-child(even){
   }
   #edit .tmenu_edit ul#tmenu_edit {
     right: 2rem;
+    margin-top: -3rem;
   }
 }
 
