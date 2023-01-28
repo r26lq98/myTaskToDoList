@@ -18,12 +18,13 @@ _tbody.forEach(item => {
     data.setAttribute("data-title", "Alarm Set")
   });
   //Menu Edit Root
-  let [icn_edit, tmenu_edit] = edit.children;
-  icn_edit.addEventListener("click", function(){
+  let [iconEdit, menuEdit] = edit.children;
+  iconEdit.addEventListener("click", function(){
     this.nextElementSibling.style.display = "block";
+    this.nextElementSibling.children.tmenu_edit.style.top = this.offsetParent.offsetTop + "px";
   });
-  tmenu_edit.addEventListener('click', function(x){
+  menuEdit.addEventListener('click', function(x){
     x.target === this ? this.style.display = "none" : this.style.display = "block";
   });
+  window.innerWidth < 540 ? menuEdit.click() : false; 
 });
-

@@ -8,7 +8,7 @@ table._task {
   background: #397;
   color: #eee;
   border-collapse: /* separate */ collapse;
-  position: relative;
+  
 }
 tr._thead {
   background: green;
@@ -155,6 +155,9 @@ table._task tr:nth-child(even){
     height: 100%;
     text-align: center;
     font-weight: lighter;
+  }
+  #edit .tmenu_edit ul#tmenu_edit {
+    right: 2rem;
   }
 }
 
