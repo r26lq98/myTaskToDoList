@@ -1,7 +1,7 @@
 .table_task {
   width: 90vw;
   margin: 5rem auto;
-  overflow: scroll;
+  overflow-x: scroll;
   position: relative;
   font-family: Arial, "Helvetica Neue", Helvetica, "Comic Sans MS";
   z-index: 5;
@@ -85,6 +85,20 @@ ul#tmenu_edit a i {
     content: '';
     position: absolute;
     z-index: -1;
+  }
+  div.table_task::-webkit-scrollbar {
+    height: .3em;  
+  }
+  div.table_task::-webkit-scrollbar-thumb{
+    border-radius: 50pt;
+    -webkit-box-shadow: inset 0 0 .5rem white;
+    background: var(--gradientUi);
+  }
+  div.table_task::-webkit-scrollbar,
+  div.table_task::-webkit-scrollbar-track,
+  div.table_task::-webkit-scrollbar-corner{
+    background: var(--gradientUi);
+    border-radius: 8pt;
   }
   .table_task, ._task {
     border-radius: 8pt;
