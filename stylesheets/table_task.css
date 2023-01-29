@@ -40,7 +40,8 @@ table._task tr:nth-child(even){
   z-index: 10;
 }
 #edit .tmenu_edit ul#tmenu_edit {
-  background: #ea3;
+  background: #eee;
+  color: #212121;
   width: 100%;
   width: fit-content;
   position: absolute;
@@ -48,11 +49,18 @@ table._task tr:nth-child(even){
   line-height: 2rem;
   padding: 0;
   border-radius: 8pt;
+  margin-top: -2.5rem;
+  overflow: hidden;
 }
 ul#tmenu_edit a {
   text-decoration: none;
-  color: #eee;
+  color: #212121;
   padding: 1rem;
+  font-weight: normal;
+  background: green;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 #taskName, .taskName, 
 #edit .tmenu_edit ul#tmenu_edit{
@@ -205,7 +213,6 @@ ul#tmenu_edit a {
   }
   #edit .tmenu_edit ul#tmenu_edit {
     right: 2rem;
-    margin-top: -3rem;
   }
 }
 

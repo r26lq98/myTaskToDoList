@@ -6,9 +6,9 @@ const _task = document.querySelector('table._task'),
   menuEdit.classList.add('tmenu_edit');
   menuEdit.innerHTML = 
   `<ul id="tmenu_edit">
-  <li><a href="">Tugas Baru</a></li>
-  <li><a href="">Detail</a></li>
-  <li><a href="">Hapus</a></li>
+  <li><a href=""><i class="fas fa-plus"></i>Tugas Baru</a></li>
+  <li><a href=""><i class="fas fa-info-circle"></i>Detail</a></li>
+  <li><a href=""><i class="fas fa-trash-alt"></i>Hapus</a></li>
   </ul>`;
   let  [_edit, _number, _icon, _taskName, _alarmSet] = thead.children;
 _tbody.forEach((item, i) => {
