@@ -236,5 +236,10 @@ ul#tmenu_edit a i {
   #edit .tmenu_edit ul#tmenu_edit {
     right: 2rem;
   }
+  ul#tmenu_edit a i{
+    font-size: 1.3rem;
+    color: #000;
+    width: auto;
+  }
 }
 
