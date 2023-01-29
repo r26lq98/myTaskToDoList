@@ -63,7 +63,7 @@ ul#tmenu_edit a {
   gap: .7rem;
 }
 ul#tmenu_edit a:hover {
-  background: yellowGreen;
+  background: var(--linkHover);
 }
 ul#tmenu_edit a i {
   margin-right: .5rem;
@@ -105,6 +105,10 @@ ul#tmenu_edit a i {
     box-shadow: var(--newShadow);
     filter: var(--dropShadow-icon);
   }
+  ._tbody:hover,
+  table._task tr:nth-child(even):hover{
+    background: var(--gradientUi);
+  }
   #taskName {
     min-width: 200px;
   }
@@ -120,7 +124,6 @@ ul#tmenu_edit a i {
   table._task {
     width: 100%;
     background-color: transparent;
-    /* background-image: var(--instaColorHome); */
     overflow: auto;
   }
   tr._thead, 
@@ -161,8 +164,7 @@ ul#tmenu_edit a i {
     z-index: -1;
   }
   table._task tr:nth-child(even){
-    background: rgba(41,181,146,0.5);
-    background-image: var(--instaColorHome);
+    background: rgba(200,200,200,0.5);
   }
   table._task tr._tbody:nth-of-type(odd){
     background: rgba(195,44,234,0.5);
