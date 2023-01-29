@@ -29,7 +29,7 @@ _tbody.forEach((item, i) => {
     taskName.setAttribute("data-title", _taskName.textContent);
     alarmSet.map(data => {
       data.id = "alarm-set";
-      data.setAttribute("data-title", _alarmSet.textContent)
+      data.setAttribute("data-title", _alarmSet.textContent);
     });
     //Menu Edit Root
     let [iconEdit] = edit.children;

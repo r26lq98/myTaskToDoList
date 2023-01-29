@@ -4,36 +4,81 @@
   overflow: scroll;
   position: relative;
   font-family: Arial, "Helvetica Neue", Helvetica, "Comic Sans MS";
+  z-index: 5;
 }
 table._task {
-  background: #397;
+  background: rgba(200,200,200,.4);
   color: #eee;
   border-collapse: /* separate */ collapse;
-  
+  text-align: center;
+  z-index: 7;
 }
 tr._thead {
-  background: green;
+  background: radial-gradient(circle at 47% 107%, #f26fcf 0%, hotpink 5%, #a739be 45%, #8916b6 60%, hotpink 90%);
 }
-/* tr._tbody {
-  position: relative;
-} */
+tr._thead th {
+  padding: 1.5rem 1rem;
+}
+tr._tbody td{
+  padding: .5rem 1rem;
+}
+table._task tr:nth-child(even){
+  background: rgba(200,200,200,.4);
+}
 #edit a._tmenu_edit i {
   color: #eee;
 }
-tr._tbody td{
-  /* border: 1px solid greenyellow; */
-  padding: .2rem 1rem;
-}
-tr._thead th {
-  padding: .2rem 1rem;
-}
-table._task tr:nth-child(even){
-  background: #175;
-}
-/* table._task tr._tbody:nth-of-type(odd){
-  background: oliveDrab;
-} */
 
+#edit .tmenu_edit {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#edit .tmenu_edit ul#tmenu_edit {
+  background: #ea3;
+  width: 100%;
+  width: fit-content;
+  position: absolute;
+  list-style: none;
+  line-height: 2rem;
+  padding: 0;
+  border-radius: 8pt;
+}
+ul#tmenu_edit a {
+  text-decoration: none;
+  color: #eee;
+  padding: 1rem;
+}
+#taskName, .taskName, 
+#edit .tmenu_edit ul#tmenu_edit{
+  text-align: left !important;
+}
+#icon {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 540px){
+  ._task::before {
+    background-image: var(--instaColorHome);
+    filter: blur(70px);
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+  .table_task, ._task {
+    border-radius: 8pt;
+  }
+  #taskName {
+    min-width: 200px;
+  }
+}
 @media screen and (max-width: 540px){
   .table_task {
     width: 100%;
@@ -143,6 +188,7 @@ table._task tr:nth-child(even){
   }
   #number {
     grid-area: number;
+    text-align: left;
   }
   #taskName {
     /* background: orangered; */
