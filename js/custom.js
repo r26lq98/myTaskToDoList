@@ -1,0 +1,1 @@
+import _var from './_vars.js';
