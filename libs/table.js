@@ -1,5 +1,6 @@
+export default function(){
   // Tabel_Task_Root
-const _task = document.querySelector('table._task'),
+  const _task = document.querySelector('table._task'),
   thead = _task.querySelector('tr._thead'),
   menuEdit = document.createElement('div'),
   [..._tbody] = _task.querySelectorAll('._tbody');
@@ -11,7 +12,7 @@ const _task = document.querySelector('table._task'),
   <li><a href=""><i class="fas fa-trash-alt"></i>Hapus</a></li>
   </ul>`;
   let  [_edit, _number, _icon, _taskName, _alarmSet] = thead.children;
-_tbody.forEach((item, i) => {
+  _tbody.forEach((item, i) => {
     let edits = item.insertCell(0),
     numbers = item.insertCell(1),
     [edit, number, icon, taskName, ...alarmSet] = item.cells;
@@ -43,3 +44,4 @@ _tbody.forEach((item, i) => {
     });
     window.innerWidth < 540 ? menuEdit.click() : false; 
   });
+}
