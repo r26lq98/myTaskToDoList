@@ -24,7 +24,7 @@ tr._thead th {
 tr._tbody td{
   padding: 1.5rem 1rem;
 }
-table._task tr:nth-child(even){
+._task tr:nth-child(even){
   background: rgba(200,200,200,.4);
 }
 #edit a {
@@ -106,6 +106,18 @@ ul#tmenu_edit a i {
   div.table_task::-webkit-scrollbar-corner{
     background: var(--gradientUi);
     border-radius: 8pt;
+  }
+  ._task tr._thead th:nth-child(5),
+  ._task tr._tbody td:nth-child(5),
+  ._task tr._thead th:nth-child(7),
+  ._task tr._tbody td:nth-child(7),
+  ._task tr._thead th:nth-child(9),
+  ._task tr._tbody td:nth-child(9),
+  ._task tr._thead th:nth-child(11),
+  ._task tr._tbody td:nth-child(11),
+  ._task tr._thead th:nth-child(13),
+  ._task tr._tbody td:nth-child(13){
+    background: rgba(200,200,200,.2);
   }
   .table_task, ._task {
     border-radius: 8pt;
