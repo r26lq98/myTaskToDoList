@@ -3,12 +3,13 @@ export default function(){
   const _task = document.querySelector('table._task'),
   thead = _task.querySelector('tr._thead'),
   menuEdit = document.createElement('div'),
+  newTask = document.getElementById('newTask'),
   [..._tbody] = _task.querySelectorAll('._tbody');
   
   menuEdit.classList.add('tmenu_edit');
   menuEdit.innerHTML = 
-  `<ul id="tmenu_edit">
-  <li><a href="#newTask"><i class="fas fa-plus"></i>Tugas Baru</a></li>
+  `<ul id="tmenu_edit" class"tmenu_edit">
+  <li><a href="#newTask" id="newTask"><i class="fas fa-plus"></i>Tugas Baru</a></li>
   <li><a href=""><i class="fas fa-info-circle"></i>Detail</a></li>
   <li><a href=""><i class="fas fa-trash-alt"></i>Hapus</a></li>
   </ul>`;
@@ -34,11 +35,13 @@ export default function(){
     //Menu Edit Root
     let [iconEdit] = edit.children;
     iconEdit.addEventListener("click", function(){
-      menuEdit.style.display = "block";
+      
       this.offsetParent.appendChild(menuEdit);
       const tabMenu = this.nextElementSibling.children.tmenu_edit,
       [newTask, details, removeTask] = Array.from(tabMenu.children);
+      
       tabMenu.style.top = this.offsetParent.offsetTop + "px";
+      
       //New Task
       newTask.addEventListener('click', function(){
         const tr = _task.insertRow(_task.rows.length),
@@ -70,6 +73,7 @@ export default function(){
         tr.classList.add('_tbody');
         
         $edit.id = "edit";
+        $edit.setAttribute("data-title", _edit.textContent);
         $id.id = "number";
         $icon.id = "icon";
         $taskName.id = "taskName";
@@ -81,9 +85,9 @@ export default function(){
         
         $edit.innerHTML = `<a href="#tmenu_edit" class="_tmenu_edit"><i class="fas fa-ellipsis-h"></i></a>`;
         
+        $edit.addEventListener('click', ()=> $edit.appendChild(menuEdit));
+        
         $id.textContent = (_task.rows.length-1).toString().padStart(2, '0');
-        
-        
         $icon.innerHTML = `<i class="fas fa-edit"></i>`;
         $taskName.textContent = "Hello world";
         
@@ -98,12 +102,19 @@ export default function(){
         alarm9.textContent = "00:00";
         alarm10.textContent = "00:00";
         
-        
       });
     });
-    menuEdit.addEventListener('click', function(x){
-      x.target === this ? this.style.display = "none" : this.style.display = "block";
-    });
     window.innerWidth < 540 ? menuEdit.click() : false; 
+  });
+  document.body.addEventListener('click', function(x){
+    if(x.target.classList.contains('_tmenu_edit') || x.target.className === 'fas fa-ellipsis-h'){
+      let [trBody] = _tbody;
+      menuEdit.style.display = "block";
+      if(window.innerWidth > 540){
+        menuEdit.children.tmenu_edit.style.top = x.target.offsetParent.offsetTop + "px";
+      }
+    } else {
+      menuEdit.style.display = "none";
+    }
   });
 }
