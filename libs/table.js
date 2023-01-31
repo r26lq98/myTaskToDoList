@@ -118,19 +118,13 @@ export default function(){
         $id.textContent = (tr.rowIndex).toString().padStart(2, '0');
       });
     });
-    if(window.innerWidth < 540){
-      menuEdit.click();
-    } else if(window.innerWidth > 540 ){
-      menuEdit.click();
-    } else {
-      menuEdit.click();
-    }
   });
   document.body.addEventListener('click', function(x){
     if(x.target.classList.contains('_tmenu_edit') || x.target.className === 'fas fa-ellipsis-h'){
       menuEdit.style.display = "block";
       if(window.innerWidth > 540){
         menuEdit.children.tmenu_edit.style.top = x.target.offsetParent.offsetTop + "px";
+        menuEdit.children.tmenu_edit.style.left = x.target.offsetParent.offsetLeft+20 + "px";
       } else if (window.innerWidth < 540) {
         menuEdit.children.tmenu_edit.style.left = x.target.offsetParent.offsetLeft-50 + "px";
       }
