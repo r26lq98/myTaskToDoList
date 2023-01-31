@@ -15,6 +15,9 @@ table._task {
 tr._thead {
   background: var(--gradientUi);
 }
+tr._thead, #alarm-set {
+  text-transform: capitalize;
+}
 tr._thead th {
   padding: 1.5rem 1rem;
 }
@@ -41,7 +44,7 @@ table._task tr:nth-child(even){
   top: 0;
   left: 0;
   z-index: 10;
-  background: rgba(0,0,0,.5);
+  /* background: rgba(0,0,0,.5); */
 }
 #edit .tmenu_edit ul#tmenu_edit {
   background: #eee;

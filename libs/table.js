@@ -10,6 +10,7 @@ export default function(){
   menuEdit.innerHTML = 
   `<ul id="tmenu_edit" class"tmenu_edit">
   <li><a href="#newTask" id="newTask"><i class="fas fa-plus"></i>Tugas Baru</a></li>
+  <li><a href="#_edit" id="_edit"><i class="fas fa-pen"></i>Edit</a></li>
   <li><a href=""><i class="fas fa-info-circle"></i>Detail</a></li>
   <li><a href=""><i class="fas fa-trash-alt"></i>Hapus</a></li>
   </ul>`;
