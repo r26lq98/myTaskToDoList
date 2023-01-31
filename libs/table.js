@@ -17,25 +17,10 @@ export default function(){
   
   let  [_edit, _number, _icon, _taskName, ..._alarms] = thead.children;
   
-  
   _tbody.forEach((item, i) => {
-    let [edit, number, icon, taskName, ...alarms] = item.cells;
-    
-    // alarms.map( (item, i) => i % 2 === 0 ? "" : console.log(item.textContent) ) ;
-    
-    alarms.map( (item, i) => i % 2 === 0 ? item.classList.add('alarm-set') : item.classList.add('alarm-desc'));
-    
-    //Cells add id
+    let [edit, number] = item.cells;
     edit.id = "edit";
     number.id = "number";
-    icon.id = "icon";
-    taskName.id = "taskName";
-    //Cells add Attributes
-    edit.setAttribute("data-title", _edit.textContent);
-    number.setAttribute("data-title", _number.textContent);
-    icon.setAttribute("data-title", _icon.textContent);
-    taskName.setAttribute("data-title", _taskName.textContent);
-    
     
     //Menu Edit Root
     let [iconEdit] = edit.children;
