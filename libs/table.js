@@ -2,10 +2,10 @@ export default function(){
   // Tabel_Task_Root
   const _task = document.querySelector('table._task'),
   thead = _task.querySelector('tr._thead'),
+  tx = document.getElementById('tfbody'),
   menuEdit = document.createElement('div'),
   newTask = document.getElementById('newTask'),
   [..._tbody] = _task.querySelectorAll('._tbody');
-  
   menuEdit.classList.add('tmenu_edit');
   menuEdit.innerHTML = 
   `<ul id="tmenu_edit" class="tmenu_edit">
@@ -40,42 +40,41 @@ export default function(){
     //Menu Edit Root
     let [iconEdit] = edit.children;
     iconEdit.addEventListener("click", function(){
-      
       this.offsetParent.appendChild(menuEdit);
       const tabMenu = this.nextElementSibling.children.tmenu_edit,
       [newTask, details, removeTask] = Array.from(tabMenu.children);
       
       tabMenu.style.top = this.offsetParent.offsetTop + "px";
       tabMenu.style.left = this.offsetLeft + "px";
-      
       //New Task
       newTask.addEventListener('click', function(){
+        
+        // console.log(iconEdit.offsetParent.parentElement)
         const tr = _task.insertRow(_task.rows.length),
         $edit = tr.insertCell(0),
         $id = tr.insertCell(1),
         $icon = tr.insertCell(2),
         $taskName = tr.insertCell(3),
         alarm1 = tr.insertCell(4),
-        alarmDes1 = tr.insertCell(5),
+        alarmDesc1 = tr.insertCell(5),
         alarm2 = tr.insertCell(6),
-        alarmDes2 = tr.insertCell(7),
+        alarmDesc2 = tr.insertCell(7),
         alarm3 = tr.insertCell(8),
-        alarmDes3 = tr.insertCell(9),
+        alarmDesc3 = tr.insertCell(9),
         alarm4 = tr.insertCell(10),
-        alarmDes4 = tr.insertCell(11),
+        alarmDesc4 = tr.insertCell(11),
         alarm5 = tr.insertCell(12),
-        alarmDes5 = tr.insertCell(13),
+        alarmDesc5 = tr.insertCell(13),
         alarm6 = tr.insertCell(14),
-        alarmDes6 = tr.insertCell(15),
+        alarmDesc6 = tr.insertCell(15),
         alarm7 = tr.insertCell(16),
-        alarmDes7 = tr.insertCell(17),
+        alarmDesc7 = tr.insertCell(17),
         alarm8 = tr.insertCell(18),
-        alarmDes8 = tr.insertCell(19),
+        alarmDesc8 = tr.insertCell(19),
         alarm9 = tr.insertCell(20),
-        alarmDes9 = tr.insertCell(21),
+        alarmDesc9 = tr.insertCell(21),
         alarm10 = tr.insertCell(22),
-        alarmDes10 = tr.insertCell(23);
-        
+        alarmDesc10 = tr.insertCell(23);
         tr.classList.add('_tbody');
         
         $edit.id = "edit";
@@ -91,9 +90,10 @@ export default function(){
         
         $edit.innerHTML = `<a href="#tmenu_edit" class="_tmenu_edit"><i class="fas fa-ellipsis-h"></i></a>`;
         
-        $edit.addEventListener('click', ()=> $edit.appendChild(menuEdit));
+        $edit.addEventListener('click', function(){
+          $edit.appendChild(menuEdit)
+        });
         
-        $id.textContent = (_task.rows.length-1).toString().padStart(2, '0');
         $icon.innerHTML = `<i class="fas fa-edit"></i>`;
         $taskName.textContent = "Hello world";
         
@@ -108,17 +108,29 @@ export default function(){
         alarm9.textContent = "00:00";
         alarm10.textContent = "00:00";
         
-        alarmDes1.textContent = "Contoh deskripsi 1";
-        alarmDes2.textContent = "Contoh deskripsi 2";
-        alarmDes3.textContent = "Contoh deskripsi 3";
-        alarmDes4.textContent = "Contoh deskripsi 4";
-        alarmDes5.textContent = "Contoh deskripsi 5";
-        alarmDes6.textContent = "Contoh deskripsi 6";
-        alarmDes7.textContent = "Contoh deskripsi 7";
-        alarmDes8.textContent = "Contoh deskripsi 8";
-        alarmDes9.textContent = "Contoh deskripsi 9";
-        alarmDes10.textContent = "Contoh deskripsi 10";
+        alarm1.classList.add('alarm-set');
+        alarm2.classList.add('alarm-set');
+        alarm3.classList.add('alarm-set');
+        alarm4.classList.add('alarm-set');
+        alarm5.classList.add('alarm-set');
+        alarm6.classList.add('alarm-set');
+        alarm7.classList.add('alarm-set');
+        alarm8.classList.add('alarm-set');
+        alarm9.classList.add('alarm-set');
+        alarm10 .classList.add('alarm-set');
         
+        alarmDesc1.textContent = "Contoh deskripsi 1";
+        alarmDesc2.textContent = "Contoh deskripsi 2";
+        alarmDesc3.textContent = "Contoh deskripsi 3";
+        alarmDesc4.textContent = "Contoh deskripsi 4";
+        alarmDesc5.textContent = "Contoh deskripsi 5";
+        alarmDesc6.textContent = "Contoh deskripsi 6";
+        alarmDesc7.textContent = "Contoh deskripsi 7";
+        alarmDesc8.textContent = "Contoh deskripsi 8";
+        alarmDesc9.textContent = "Contoh deskripsi 9";
+        alarmDesc10.textContent = "Contoh deskripsi 10";
+        tx.remove();
+        $id.textContent = (tr.rowIndex).toString().padStart(2, '0');
       });
     });
     if(window.innerWidth < 540){
@@ -131,7 +143,6 @@ export default function(){
   });
   document.body.addEventListener('click', function(x){
     if(x.target.classList.contains('_tmenu_edit') || x.target.className === 'fas fa-ellipsis-h'){
-      let [trBody] = _tbody;
       menuEdit.style.display = "block";
       if(window.innerWidth > 540){
         menuEdit.children.tmenu_edit.style.top = x.target.offsetParent.offsetTop + "px";
