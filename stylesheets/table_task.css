@@ -44,7 +44,6 @@ tr._tbody td{
   top: 0;
   left: 0;
   z-index: 10;
-  background: rgba(0,0,0,.5);
 }
 #edit .tmenu_edit ul#tmenu_edit {
   background: #eee;
@@ -108,8 +107,8 @@ ul#tmenu_edit a i {
     border-radius: 8pt;
   }
   #alarm-set, .alarm-set {
-    background: rgba(0,0,0,.2);
-    min-width: 25vw;
+    background: rgba(0,0,0,.1);
+    min-width: 250px;
   }
   tr._thead th#alarm-desc, 
   tr._tbody td.alarm-desc {
@@ -122,11 +121,15 @@ ul#tmenu_edit a i {
   }
   ._tbody:hover,
   table._task tr:nth-child(even):hover{
-    background: var(--gradientUi);
+    background: violet;
+    background-image: linear-gradient( 35deg, hsl(240deg 100% 20%) 0%, hsl(265deg 97% 26%) 1%, hsl(275deg 92% 31%) 8%, hsl(283deg 87% 37%) 26%, hsl(289deg 75% 44%) 54%, hsl(293deg 63% 50%) 76%, hsl(297deg 68% 56%) 91%, hsl(302deg 80% 63%) 100% );
   }
   #taskName {
     min-width: 200px;
   }
+  #edit .tmenu_edit {
+  background: rgba(0,0,0,.5);
+}
 }
 @media screen and (max-width: 540px){
   .table_task {
@@ -251,7 +254,7 @@ ul#tmenu_edit a i {
     font-weight: lighter;
   }
   #edit .tmenu_edit ul#tmenu_edit {
-    right: 2rem;
+    right: 0;
   }
   ul#tmenu_edit a i{
     font-size: 1.3rem;
