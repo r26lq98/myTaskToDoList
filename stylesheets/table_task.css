@@ -251,7 +251,7 @@ ul#tmenu_edit a i {
     font-weight: lighter;
   }
   #edit .tmenu_edit ul#tmenu_edit {
-    right: 2rem;
+    right: 0;
   }
   ul#tmenu_edit a i{
     font-size: 1.3rem;

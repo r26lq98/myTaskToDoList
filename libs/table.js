@@ -46,6 +46,7 @@ export default function(){
       [newTask, details, removeTask] = Array.from(tabMenu.children);
       
       tabMenu.style.top = this.offsetParent.offsetTop + "px";
+      tabMenu.style.left = this.offsetLeft + "px";
       
       //New Task
       newTask.addEventListener('click', function(){
@@ -120,7 +121,13 @@ export default function(){
         
       });
     });
-    window.innerWidth < 540 ? menuEdit.click() : false; 
+    if(window.innerWidth < 540){
+      menuEdit.click();
+    } else if(window.innerWidth > 540 ){
+      menuEdit.click();
+    } else {
+      menuEdit.click();
+    }
   });
   document.body.addEventListener('click', function(x){
     if(x.target.classList.contains('_tmenu_edit') || x.target.className === 'fas fa-ellipsis-h'){
@@ -128,6 +135,8 @@ export default function(){
       menuEdit.style.display = "block";
       if(window.innerWidth > 540){
         menuEdit.children.tmenu_edit.style.top = x.target.offsetParent.offsetTop + "px";
+      } else if (window.innerWidth < 540) {
+        menuEdit.children.tmenu_edit.style.left = x.target.offsetParent.offsetLeft-50 + "px";
       }
     } else {
       menuEdit.style.display = "none";
