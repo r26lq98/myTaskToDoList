@@ -75,7 +75,7 @@ ul#tmenu_edit a i {
   margin-right: .5rem;
 }
 #taskName, .taskName, 
-#edit .tmenu_edit ul#tmenu_edit{
+#edit .tmenu_edit ul#tmenu_edit, #tfbody{
   text-align: left !important;
 }
 #icon {
