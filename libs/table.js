@@ -54,7 +54,7 @@ export default function(){
         alarm2 = tr.insertCell(6),
         alarmDes2 = tr.insertCell(7),
         alarm3 = tr.insertCell(8),
-        alarm1Des3 = tr.insertCell(9),
+        alarmDes3 = tr.insertCell(9),
         alarm4 = tr.insertCell(10),
         alarmDes4 = tr.insertCell(11),
         alarm5 = tr.insertCell(12),
@@ -101,6 +101,17 @@ export default function(){
         alarm8.textContent = "00:00";
         alarm9.textContent = "00:00";
         alarm10.textContent = "00:00";
+        
+        alarmDes1.textContent = "Contoh deskripsi 1";
+        alarmDes2.textContent = "Contoh deskripsi 2";
+        alarmDes3.textContent = "Contoh deskripsi 3";
+        alarmDes4.textContent = "Contoh deskripsi 4";
+        alarmDes5.textContent = "Contoh deskripsi 5";
+        alarmDes6.textContent = "Contoh deskripsi 6";
+        alarmDes7.textContent = "Contoh deskripsi 7";
+        alarmDes8.textContent = "Contoh deskripsi 8";
+        alarmDes9.textContent = "Contoh deskripsi 9";
+        alarmDes10.textContent = "Contoh deskripsi 10";
         
       });
     });

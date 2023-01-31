@@ -7,9 +7,8 @@
   z-index: 5;
 }
 table._task {
-  background: rgba(200,200,200,.4);
   color: #eee;
-  border-collapse: /* separate */ collapse;
+  border-collapse: collapse;
   text-align: center;
   z-index: 7;
 }
