@@ -15,13 +15,16 @@ table._task {
 tr._thead {
   background: var(--gradientUi);
 }
+tr._thead, #alarm-set {
+  text-transform: capitalize;
+}
 tr._thead th {
   padding: 1.5rem 1rem;
 }
 tr._tbody td{
   padding: 1.5rem 1rem;
 }
-table._task tr:nth-child(even){
+._task tr:nth-child(even){
   background: rgba(200,200,200,.4);
 }
 #edit a {
@@ -41,7 +44,7 @@ table._task tr:nth-child(even){
   top: 0;
   left: 0;
   z-index: 10;
-  background: rgba(0,0,0,.5);
+  /* background: rgba(0,0,0,.5); */
 }
 #edit .tmenu_edit ul#tmenu_edit {
   background: #eee;
@@ -103,6 +106,14 @@ ul#tmenu_edit a i {
   div.table_task::-webkit-scrollbar-corner{
     background: var(--gradientUi);
     border-radius: 8pt;
+  }
+  #alarm-set, .alarm-set {
+    background: rgba(0,0,0,.2);
+    min-width: 30vw !important;
+  }
+  tr._thead th#alarm-desc, 
+  tr._tbody td.alarm-desc {
+    min-width: 45vw;
   }
   .table_task, ._task {
     border-radius: 8pt;
