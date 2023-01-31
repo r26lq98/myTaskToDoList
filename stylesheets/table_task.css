@@ -44,13 +44,13 @@ tr._tbody td{
   top: 0;
   left: 0;
   z-index: 10;
-  /* background: rgba(0,0,0,.5); */
+  background: rgba(0,0,0,.5);
 }
 #edit .tmenu_edit ul#tmenu_edit {
   background: #eee;
   color: #212121;
-  width: 100%;
   width: fit-content;
+  height: fit-content;
   position: absolute;
   list-style: none;
   line-height: 2rem;
@@ -109,11 +109,11 @@ ul#tmenu_edit a i {
   }
   #alarm-set, .alarm-set {
     background: rgba(0,0,0,.2);
-    min-width: 30vw !important;
+    min-width: 25vw;
   }
   tr._thead th#alarm-desc, 
   tr._tbody td.alarm-desc {
-    min-width: 45vw;
+    min-width: 35vw;
   }
   .table_task, ._task {
     border-radius: 8pt;

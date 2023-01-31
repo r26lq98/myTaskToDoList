@@ -8,7 +8,7 @@ export default function(){
   
   menuEdit.classList.add('tmenu_edit');
   menuEdit.innerHTML = 
-  `<ul id="tmenu_edit" class"tmenu_edit">
+  `<ul id="tmenu_edit" class="tmenu_edit">
   <li><a href="#newTask" id="newTask"><i class="fas fa-plus"></i>Tugas Baru</a></li>
   <li><a href="#_edit" id="_edit"><i class="fas fa-pen"></i>Edit</a></li>
   <li><a href=""><i class="fas fa-info-circle"></i>Detail</a></li>
@@ -21,7 +21,7 @@ export default function(){
   _tbody.forEach((item, i) => {
     let [edit, number, icon, taskName, ...alarms] = item.cells;
     
-    alarms.map( (item, i) => i % 2 === 0 ? "" : console.log(item.textContent) ) ;
+    // alarms.map( (item, i) => i % 2 === 0 ? "" : console.log(item.textContent) ) ;
     
     alarms.map( (item, i) => i % 2 === 0 ? item.classList.add('alarm-set') : item.classList.add('alarm-desc'));
     
