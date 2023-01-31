@@ -20,10 +20,14 @@ tr._thead th {
   padding: 1.5rem 1rem;
 }
 tr._tbody td{
-  padding: .5rem 1rem;
+  padding: 1.5rem 1rem;
 }
 table._task tr:nth-child(even){
   background: rgba(200,200,200,.4);
+}
+#edit a {
+  padding: 1rem;
+  color: #eee;
 }
 #edit a._tmenu_edit i {
   color: #eee;
@@ -38,6 +42,7 @@ table._task tr:nth-child(even){
   top: 0;
   left: 0;
   z-index: 10;
+  background: rgba(0,0,0,.5);
 }
 #edit .tmenu_edit ul#tmenu_edit {
   background: #eee;
@@ -124,7 +129,7 @@ ul#tmenu_edit a i {
   table._task {
     width: 100%;
     background-color: transparent;
-    overflow: auto;
+    display: table;
   }
   tr._thead, 
   #edit::before,
