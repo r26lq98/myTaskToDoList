@@ -107,17 +107,13 @@ ul#tmenu_edit a i {
     background: var(--gradientUi);
     border-radius: 8pt;
   }
-  ._task tr._thead th:nth-child(5),
-  ._task tr._tbody td:nth-child(5),
-  ._task tr._thead th:nth-child(7),
-  ._task tr._tbody td:nth-child(7),
-  ._task tr._thead th:nth-child(9),
-  ._task tr._tbody td:nth-child(9),
-  ._task tr._thead th:nth-child(11),
-  ._task tr._tbody td:nth-child(11),
-  ._task tr._thead th:nth-child(13),
-  ._task tr._tbody td:nth-child(13){
-    background: rgba(200,200,200,.2);
+  #alarm-set, .alarm-set {
+    background: rgba(0,0,0,.2);
+    min-width: 30vw !important;
+  }
+  tr._thead th#alarm-desc, 
+  tr._tbody td.alarm-desc {
+    min-width: 45vw;
   }
   .table_task, ._task {
     border-radius: 8pt;

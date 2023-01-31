@@ -15,10 +15,16 @@ export default function(){
   <li><a href=""><i class="fas fa-trash-alt"></i>Hapus</a></li>
   </ul>`;
   
-  let  [_edit, _number, _icon, _taskName, _alarmSet] = thead.children;
+  let  [_edit, _number, _icon, _taskName, ..._alarms] = thead.children;
+  
   
   _tbody.forEach((item, i) => {
-    let [edit, number, icon, taskName, ...alarmSet] = item.cells;
+    let [edit, number, icon, taskName, ...alarms] = item.cells;
+    
+    alarms.map( (item, i) => i % 2 === 0 ? "" : console.log(item.textContent) ) ;
+    
+    alarms.map( (item, i) => i % 2 === 0 ? item.classList.add('alarm-set') : item.classList.add('alarm-desc'));
+    
     //Cells add id
     edit.id = "edit";
     number.id = "number";
@@ -29,10 +35,8 @@ export default function(){
     number.setAttribute("data-title", _number.textContent);
     icon.setAttribute("data-title", _icon.textContent);
     taskName.setAttribute("data-title", _taskName.textContent);
-    alarmSet.map(data => {
-      data.id = "alarm-set";
-      data.setAttribute("data-title", _alarmSet.textContent);
-    });
+    
+    
     //Menu Edit Root
     let [iconEdit] = edit.children;
     iconEdit.addEventListener("click", function(){
