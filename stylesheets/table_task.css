@@ -18,10 +18,8 @@ tr._thead {
 tr._thead, #alarm-set {
   text-transform: capitalize;
 }
-tr._thead th {
-  padding: 1.5rem 1rem;
-}
-tr._tbody td{
+tr._thead th, 
+tr._tbody td {
   padding: 1.5rem 1rem;
 }
 ._task tr:nth-child(even){
@@ -56,7 +54,6 @@ tr._tbody td{
   padding: 0;
   border-radius: 8pt;
   margin-top: -2.5rem;
-  overflow: hidden;
 }
 ul#tmenu_edit a {
   text-decoration: none;
@@ -112,7 +109,7 @@ ul#tmenu_edit a i {
   }
   tr._thead th#alarm-desc, 
   tr._tbody td.alarm-desc {
-    min-width: 35vw;
+    min-width: 400px;
   }
   .table_task, ._task {
     border-radius: 8pt;
@@ -135,7 +132,7 @@ ul#tmenu_edit a i {
   .table_task {
     width: 100%;
     background-color: #212121;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 5rem 1rem;
     margin: 0;
   }
